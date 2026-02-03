@@ -9,7 +9,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CarRepository {
+public class CarRepository implements CrudRepository<Car> {
 
     public Car create(Car car) {
         String sql = "INSERT INTO car (name, license_plate, daily_price, status) " +

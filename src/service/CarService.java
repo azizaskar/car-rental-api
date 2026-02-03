@@ -4,8 +4,9 @@ import exception.DuplicateResourceException;
 import exception.InvalidInputException;
 import model.Car;
 import repository.CarRepository;
-
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class CarService {
 
@@ -25,8 +26,6 @@ public class CarService {
         if (dailyPrice <= 0) {
             throw new InvalidInputException("daily price must be > 0");
         }
-
-        // Simple duplicate check by plate (getAll қолдану B1 деңгейге ок)
         List<Car> all = carRepository.getAll();
         boolean exists = all.stream()
                 .anyMatch(c -> c.getLicensePlate().equalsIgnoreCase(licensePlate));
@@ -59,8 +58,13 @@ public class CarService {
 
         carRepository.update(id, existing);
     }
-
     public void deleteCar(int id) {
         carRepository.delete(id);
     }
+    public List<Car> getCarsSortedByPrice() {
+        return carRepository.getAll().stream()
+                .sorted(Comparator.comparingDouble(Car::getDailyPrice)) // Lambda
+                .collect(Collectors.toList());
+    }
+
 }

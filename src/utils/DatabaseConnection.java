@@ -26,4 +26,5 @@ public class DatabaseConnection {
             throw new RuntimeException("Cannot connect to PostgreSQL database", e);
         }
     }
+    
 }

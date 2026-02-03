@@ -28,6 +28,8 @@ public class Car extends BaseEntity implements Validatable {
         return dailyPrice;
     }
 
+
+
     public void setDailyPrice(double dailyPrice) {
         if (dailyPrice <= 0) {
             throw new IllegalArgumentException("daily price must be > 0");

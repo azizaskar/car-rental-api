@@ -12,7 +12,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RentalRepository {
+public class RentalRepository implements CrudRepository<Rental> {
 
     private final CarRepository carRepository;
     private final CustomerRepository customerRepository;

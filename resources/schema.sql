@@ -36,9 +36,13 @@ INSERT INTO customer (name, driver_license, phone) VALUES
                                                        ('Bob Smith', 'DL-67890', '+1-555-2222');
 
 INSERT INTO car (name, license_plate, daily_price, status) VALUES
-                                                               ('Toyota Corolla', 'ABC-001', 50.00, 'AVAILABLE'),
-                                                               ('Honda Civic', 'ABC-002', 60.00, 'AVAILABLE'),
-                                                               ('Tesla Model 3', 'EV-777', 150.00, 'MAINTENANCE');
+                                                               ('Toyota Corolla', 'ABC-001', 15000.00, 'AVAILABLE'),
+                                                               ('Honda Civic', 'ABC-002', 16000.00, 'AVAILABLE'),
+                                                               ('Tesla Model 3', 'EV-777', 20000.00, 'MAINTENANCE'),
+                                                               ('Toyota Camry 75', 'KZ 001 AAA', 25000.00, 'AVAILABLE'),
+                                                               ('BMW X5', 'KZ 777 BMW', 45000.00, 'RENTED'),
+                                                               ('Hyundai Elantra', 'KZ 123 ABC', 18000.00, 'AVAILABLE'),
+                                                               ('Mercedes S-Class', 'KZ 002 SSS', 60000.00, 'MAINTENANCE');
 
 INSERT INTO rental (car_id, customer_id, start_date, end_date, total_price) VALUES
                                                                                 (1, 1, '2026-01-10', '2026-01-12', 100.00),
